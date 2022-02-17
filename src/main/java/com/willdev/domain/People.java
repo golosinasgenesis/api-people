@@ -1,18 +1,27 @@
 package com.willdev.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="people")
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class People {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String lastName;
     private int age;
     private String gender;
-    private String correo;
+    private String email;
 
 }
